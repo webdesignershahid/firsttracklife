@@ -1,0 +1,61 @@
+/*-------------------------------------------------
+    [ ## Fields ]
+---------------------------------------------------*/
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+    font-size: 1.6rem;
+    width: 100%;
+    padding: 1.5rem;
+    box-shadow: none;
+    outline: none;
+    &:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: $color__black;
+    }
+}
+input[type=time]::-webkit-inner-spin-button, 
+input[type=time]::-webkit-outer-spin-button,
+input[type=date]::-webkit-inner-spin-button, 
+input[type=date]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size: 1.6rem;
+}
+textarea.form-control {
+    display: block;
+    width: 100%;
+    display: block;
+    min-height: 150px;
+    padding: 1.5rem;
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+.form-floating > .form-control {
+    border: none;
+    border-bottom: .1rem solid rgba(#000, 0.1);
+    border-radius: 0;
+}

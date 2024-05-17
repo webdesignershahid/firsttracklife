@@ -1,0 +1,187 @@
+/*=====================================================
+    Hero Section
+=======================================================*/ 
+.hero {
+    background-color: $color__primary;
+    position: relative;
+    z-index: 1;
+    padding: 8rem 0;
+
+
+    .overlay-img {
+        background-size: cover;
+        mix-blend-mode: overlay;
+        position: absolute;
+        inset: 0;
+        opacity: .5;
+        background-repeat: no-repeat;
+        background-position: top center;        
+        z-index: -1;
+    }
+
+    .hero-content {
+        h5, h2, h1 {
+            color: $color__white;
+        }
+        h5 {
+            font-size: 1.8rem;
+        }
+        h2 {
+            font-size: 5.3rem;
+            font-weight: bold;
+            max-width: 40rem;
+            @include xl-up {
+                font-size: 6.3rem;
+            }
+        }
+        h1 {
+            font-size: 7rem;
+            font-weight: bolder;
+            @include xl-up {
+                font-size: 8rem;
+            }
+        }
+        .animated-line {
+            svg {
+                path {
+                    stroke: $color__secondary;
+                    stroke-width: .2rem;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    fill: transparent;
+                    opacity: 0;
+                    stroke-dasharray: 0 1500;
+                    transition: .3s;
+                    animation: elementor-headline-dash forwards;
+                    animation-duration: 1200ms, 1.2s;
+                    animation-iteration-count: 1;
+                }
+            }
+            &.hide-highlight {
+                svg {
+                    path {
+                        opacity: 1;
+                        stroke-dasharray: 1500 1500;
+                        animation: hide-highlight .4s forwards;
+                        animation-iteration-count: 1
+                    }
+                }
+            }
+        }
+        ul {
+            li {
+                .icon {
+                    margin-right: 1rem;
+                }
+                svg {
+                    width: 3rem;
+                    path {
+                        fill: $color__secondary;
+                        transition: all .15s ease;
+                    }
+                }
+                color: $color__white;
+                transition: all .15s ease;
+                margin: 1.5rem 0;
+                &:hover {
+                    color: $color__secondary;
+
+                    svg {
+                        path {
+                            fill: $color__white;
+                        }
+                    }
+                }
+            }
+        }
+        .cta-button {
+            margin-top: 4rem;
+            a {
+                background-color: $color__white;
+                color: $color__primary;
+                font-weight: 600;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                border-radius: 10rem;
+                padding: 1.5rem 4rem;
+                font-size: 2rem;
+                transition: all .3s ease;
+
+                &:hover {
+                    transform: translateY(1rem);
+                }
+            }
+        }
+    }
+
+    .hero-img {
+        position: relative;
+        max-width: 40rem;
+        margin: 0 auto;
+        user-select: none;
+        
+        @include md-down {
+            margin-top: 10rem;
+        }
+        @include lg-up {
+            max-width: 50rem;
+        }
+        .main-img {
+            max-width: 38rem;
+            @include lg-up {
+                max-width: 50rem;
+            }
+        }
+        .celebrating-badge {
+            position: absolute;
+            top: 25rem;
+            left: 0rem;
+            @include lg-down {
+                max-width: 15rem;
+            }
+            
+            @include lg-up {
+                left: -8rem;                
+            }
+            @include xl-up {
+                top: 8rem;
+            }
+            @include xxl-up {
+                top: 13rem;
+            }
+        }
+        .counter-number {
+            background-color: $color__white;
+            border-radius: .5rem;
+            padding: 1rem 2rem;
+            text-align: center;
+            position: absolute;
+            top: -5rem;
+            right: 0;
+            box-shadow: 0 1rem 1rem 0 rgba($color__primary, 0.15);
+            .number {
+                font-size: 6.5rem;
+                color: $color__primary;
+                line-height: 1;
+                @include lg-down {
+                    font-size: 5.5rem;
+                }
+            }
+            p {
+                font-weight: 600;
+            }
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: $color__secondary;
+        z-index: -1;
+        clip-path: polygon(0 95%, 100% 15%, 100% 100%, 0% 100%);
+    }
+
+}
